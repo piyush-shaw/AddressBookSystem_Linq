@@ -45,5 +45,9 @@ internal class Program
         //Retrieve based on city or state
         string var3 = dataTableManger.RetrieveBasedOnCityorState("Kolkata", "West Bengal");
         Console.WriteLine("Success" + varl);
+
+        //count based on city or state
+        string var4 = dataTableManger.RetrieveCountBasedOnCityorState();
+        Console.WriteLine("Success" + varl);
     }
 }
