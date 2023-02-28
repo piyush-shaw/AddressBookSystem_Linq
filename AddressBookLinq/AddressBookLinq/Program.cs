@@ -39,7 +39,11 @@ internal class Program
         Console.WriteLine("Success" + varl);
 
         //Delete
-        int var2 = dataTableManger.DeleteRowInDataTable("Singh");
+        int var2 = dataTableManger.DeleteRowInDataTable("Shaw");
+        Console.WriteLine("Success" + varl);
+
+        //Retrieve based on city or state
+        string var3 = dataTableManger.RetrieveBasedOnCityorState("Kolkata", "West Bengal");
         Console.WriteLine("Success" + varl);
     }
 }

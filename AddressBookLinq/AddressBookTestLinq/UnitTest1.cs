@@ -58,4 +58,23 @@ public class AddressBookTesting
         int actual = dataTableManger.DeleteRowInDataTable("lala");
         Assert.AreEqual(actual, expected);
     }
+
+    //Usecase 4: Retrieve values from DataTable based on City or State
+    [TestMethod]
+    [TestCategory("Retrieve Row in Data Table based on City ")]
+    public void GivenRetrieveQuery_BasedOnCityandState_returnString()
+    {
+        string expected = "Piyush";
+        string actual = dataTableManger.RetrieveBasedOnCityorState("Kolkata", "Lucknow");
+        Assert.AreEqual(actual, expected);
+    }
+
+    [TestMethod]
+    [TestCategory("Retrieve Row in Data Table based on state ")]
+    public void GivenRetrieveQuery_BasedOnCityorState_returnString()
+    {
+        string expected = "Piyush Shaw";
+        string actual = dataTableManger.RetrieveBasedOnCityorState("Kolkata ", "West Bengal");
+        Assert.AreEqual(actual, expected);
+    }
 }
