@@ -33,5 +33,13 @@ internal class Program
         contactDataManagers.zip = 123001;
         dataTableManger.InsertintoDataTable(contactDataManagers);
         dataTableManger.Display();
+
+        //Modify
+        int varl = dataTableManger.EditDataTable("Singh", "Lastname");
+        Console.WriteLine("Success" + varl);
+
+        //Delete
+        int var2 = dataTableManger.DeleteRowInDataTable("Singh");
+        Console.WriteLine("Success" + varl);
     }
 }

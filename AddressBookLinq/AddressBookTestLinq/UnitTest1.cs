@@ -39,4 +39,23 @@ public class AddressBookTesting
         int actual = dataTableManger.EditDataTable("mam", "Lastname");
         Assert.AreEqual(actual, expected);
     }
+
+    //Usecase 3: Delete values in DataTable based on Name
+    [TestMethod]
+    [TestCategory("Delete Row in Data Table")]
+    public void GivenDeleteQuery_returnInteger()
+    {
+        int expected = 1;
+        int actual = dataTableManger.DeleteRowInDataTable("Ankita");
+        Assert.AreEqual(actual, expected);
+    }
+
+    [TestMethod]
+    [TestCategory("Delete Row in Data Table-Negative Test Case")]
+    public void GivenWrongDeleteQuery_returnInteger()
+    {
+        int expected = 0;
+        int actual = dataTableManger.DeleteRowInDataTable("lala");
+        Assert.AreEqual(actual, expected);
+    }
 }
