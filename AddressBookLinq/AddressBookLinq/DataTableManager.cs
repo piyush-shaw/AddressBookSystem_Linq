@@ -156,6 +156,21 @@ namespace AddressBookLinq
             custTable.Rows.Add(dtRow);
 
         }
+
+        //Edit value in DataTable using name
+        public int EditDataTable(string FirstName, string ColumnName)
+        {
+            AddValues();
+            var modifiedList = (from ContactList in custTable.AsEnumerable() where ContactList.Field<string>("FirstName") == FirstName select ContactList).FirstOrDefault();
+            if (modifiedList != null)
+            {
+                modifiedList[ColumnName] = "Sing";
+                Display();
+                return 1;
+            }
+            else return 0;
+        }
+
         //Display all Values in DataRow
         public void Display()
         {
