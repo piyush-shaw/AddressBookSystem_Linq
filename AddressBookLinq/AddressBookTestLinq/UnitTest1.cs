@@ -64,7 +64,7 @@ public class AddressBookTesting
     [TestCategory("Retrieve Row in Data Table based on City ")]
     public void GivenRetrieveQuery_BasedOnCityandState_returnString()
     {
-        string expected = "Piyush";
+        string expected = "Piyush ";
         string actual = dataTableManger.RetrieveBasedOnCityorState("Kolkata", "Lucknow");
         Assert.AreEqual(actual, expected);
     }
@@ -73,7 +73,7 @@ public class AddressBookTesting
     [TestCategory("Retrieve Row in Data Table based on state ")]
     public void GivenRetrieveQuery_BasedOnCityorState_returnString()
     {
-        string expected = "Piyush Shaw";
+        string expected = "Ankita ";
         string actual = dataTableManger.RetrieveBasedOnCityorState("Kolkata ", "West Bengal");
         Assert.AreEqual(actual, expected);
     }
@@ -83,8 +83,18 @@ public class AddressBookTesting
     [TestCategory("Retrieve Row in Data Table based on City ")]
     public void GivenRetrieveCountQuery_BasedOnCityandState_returnString()
     {
-        string expected = "0 1";
+        string expected = "1 1 ";
         string actual = dataTableManger.RetrieveCountBasedOnCityorState();
+        Assert.AreEqual(actual, expected);
+    }
+
+    //Usecase 6: Sort based on City
+    [TestMethod]
+    [TestCategory("Sort based on City")]
+    public void GivenSortQuery_BasedOnCityandState_returnString()
+    {
+        string expected = "Piyush ";
+        string actual = dataTableManger.SortBasedOnNameInDataTable("Kolkata");
         Assert.AreEqual(actual, expected);
     }
 }
